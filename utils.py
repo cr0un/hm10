@@ -1,16 +1,16 @@
 import json
 
 def get_canditates(path):
-    with open ('../candidates.json', 'r', encoding='utf-8') as candidates:
+    with open(path, 'r', encoding='utf-8') as candidates:
         return json.load(candidates)
 
 def format_candidates(candidates_list):
     result = '<pre>'
     for candidate in candidates_list:
         result += (
-f'Имя кандидата - {candidate["name"]}\n'
-f'Позиция кандидата - {candidate["position"]}\n'
-f'Навыки через запятую - {candidate["skills"]}\n\n'
+            f'Имя кандидата - {candidate["name"]}\n'
+            f'Позиция кандидата - {candidate["position"]}\n'
+            f'Навыки через запятую - {candidate["skills"]}\n\n'
         )
     result += '<pre>'
     return result
@@ -27,4 +27,3 @@ def get_candidates_by_skill(candidates_list, candidates_skill):
         if candidates_skill.lower() in candidates_skills:
             result.append(candidate)
     return result
-
