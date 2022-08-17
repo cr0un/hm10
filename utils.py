@@ -1,7 +1,7 @@
 import json
 
 def get_canditates(path):
-    with open ('venv/candidates.json', 'r') as candidates:
+    with open ('../candidates.json', 'r', encoding='utf-8') as candidates:
         return json.load(candidates)
 
 def format_candidates(candidates_list):
